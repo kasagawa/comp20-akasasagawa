@@ -1,0 +1,52 @@
+
+@media (min-device-width: 1200 px){
+
+	.software{width:128px;height:240px;background:url(software.png) 0 0px;}
+}
+@media (min-device-width: 1100 px) and (max-device-width: 1200 px){a
+
+	.software{width:128px;height:240px;background:url(software.png) -128 0px;}
+}
+
+@media (min-device-width: 1000 px) and (max-device-width: 1110 px){
+
+	.software{width:128px;height:240px;background:url(software.png) -256 0px;}
+}
+
+@media (min-device-width: 900 px) and (max-device-width: 1000 px){
+
+	.software{width:128px;height:240px;background:url(software.png) -384 0px;}
+
+}
+
+@media (min-device-width: 800 px) and (max-device-width: 900 px){
+
+	.software{width:128px;height:240px;background:url(software.png) -512 0px;}
+}
+
+@media (min-device-width: 700 px) and (max-device-width: 800 px){
+
+	.software{width:128px;height:240px;background:url(software.png) 0 -240px;}
+}
+
+@media (min-device-width: 600 px) and (max-device-width: 700 px){
+
+	.software{width:128px;height:240px;background:url(software.png) -128 -240}px;}
+}
+
+@media (min-device-width: 500 px) and (max-device-width: 600 px){
+	
+	.software{width:128px;height:240px;background:url(software.png) -256 -240}px;}
+}
+
+@media (min-device-width: 400 px) and (max-device-width: 500 px){
+	
+	.software{width:128px;height:240px;background:url(software.png) -384 -240}px;}
+
+}
+
+@media (max-device-width: 400 px){
+	
+	.software{width:128px;height:240px;background:url(software.png) -512 -240}px;}
+}
+
