@@ -2,10 +2,10 @@ Anna Kasagawa
 Feb. 18th 2016
 COMP 20 - LAB 4
 
-What works:
+What works: Different part of image shows depending on size of the browser. 
 
-Collaborated with:
+Collaborated with: Ben Francis, Elizabeth Bishop, Matt Carrington-Fair, TA's
 
-Hours spent:
+Hours spent: 4 hours
 
 
