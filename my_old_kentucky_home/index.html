@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>My Old Kentucky Home</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+<h1 id="title">My Old Kentucky Home</h1>
+
+<video src="https://www.cs.tufts.edu/comp/20/my_old_kentucky_home.mp4" id="music_video" controls></video>
+<div id="lyrics"></div>
+
+<script>
+	var video = document.getElementById("video");
+	var lyrics = document.getElementById("lyrics");
+
+	video.addEventListener("timeupdate", function()){
+		timer.innerHTML = video.currentTime;
+
+		if(video.currentTime < 9){
+			caption.innerHTML = "<h1> wahoo </h1>";
+		}
+		/* verse 1 */
+		else if(video.currentTime > 9 && video.currentTime < 15 {
+			caption.innerHTML = "<h1> The sun shines bright in My Old Kentucky Home, </h1>";
+		}
+		else if(video.currentTime > 15 && video.currentTime < 22 {
+			caption.innerHTML = "<h1> 'Tis summer, the people are gay; </h1>";
+		}
+		else if(video.currentTime > 22 && video.currentTime < 28 {
+			caption.innerHTML = "<h1> The corn-top's ripe and the meadow's in the bloom </h1>";
+		}
+		else if(video.currentTime > 28 && video.currentTime < 35 {
+			caption.innerHTML = "<h1> While the birds make music all the day. </h1>";
+		}
+		/* second verse */
+
+		else if(video.currentTime > 35 && video.currentTime < 42 {
+			caption.innerHTML = "<h1> The young folks roll on the little cabin floor,</h1>";
+		}
+		else if(video.currentTime > 42 && video.currentTime < 49 {
+			caption.innerHTML = "<h1> All merry, all happy and bright; </h1>";
+		}
+		else if(video.currentTime > 49 && video.currentTime < 55 {
+			caption.innerHTML = "<h1> By 'n' by hard times comes a knocking at the door, </h1>";
+		}
+		else if(video.currentTime > 55 && video.currentTime < 63 {
+			caption.innerHTML = "<h1>Then My Old Kentucky Home, good night! </h1>";
+		}
+		/* chorus */
+
+		else if(video.currentTime > 63 && video.currentTime < 69 {
+			caption.innerHTML = "<h1> Weep no more my lady</h1>";
+		}
+		else if(video.currentTime > 69 && video.currentTime < 76 {
+			caption.innerHTML = "<h1> Oh weep no more today; </h1>";
+		}
+		else if(video.currentTime > 76 && video.currentTime < 79 {
+			caption.innerHTML = "<h1> We will sing one song </h1>";
+		}
+		else if(video.currentTime > 79 && video.currentTime < 84 {
+			caption.innerHTML = "<h1> For My Old Kentucky Home </h1>";
+		}		
+		else if(video.currentTime > 84 && video.currentTime < 93 {
+			caption.innerHTML = "<h1>For My Old Kentucky Home, far away </h1>";
+		}
+
+		else if(video.currentTime > 93 {
+			caption.innerHTML = "<h1> The End </h1>";
+		}
+
+		else {
+			caption.innerHTML = "";
+		}
+	}, false);
+
+</script>
+</body>
+</html>	
+
