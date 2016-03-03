@@ -19,7 +19,6 @@
 
 	video.addEventListener("timeupdate", function() {
 		if(video.currentTime < 3){
-			lyrics.innerHTML = "<h3> wahoo </h3>";
 			lyrics.innerHTML = '<p><img src ="kfc.jpg" alt= "KFC" /> </p>';
 
 		}
@@ -28,12 +27,9 @@
 
 		}		
 		else if(video.currentTime > 6 && video.currentTime < 9){
-			lyrics.innerHTML = "<h2> competition </h2>";
 			lyrics.innerHTML = '<p><img src ="ronald.jpg" alt= "ronald mcdonald" /> </p>';
 
 		}		
-
-		/* verse 1 */
 		else if (video.currentTime > 9 && video.currentTime < 15) {
 			lyrics.innerHTML = "<h3> The sun shines bright in My Old Kentucky Home, </h3>";
 		}
@@ -46,8 +42,6 @@
 		else if(video.currentTime > 28 && video.currentTime < 35) {
 			lyrics.innerHTML = "<h3> While the birds make music all the day. </h3>";
 		}
-		/* second verse */
-
 		else if(video.currentTime > 35 && video.currentTime < 42) {
 			lyrics.innerHTML = "<h3> The young folks roll on the little cabin floor,</h3>";
 		}
@@ -60,8 +54,6 @@
 		else if(video.currentTime > 55 && video.currentTime < 63) {
 			lyrics.innerHTML = "<h3>Then My Old Kentucky Home, good night! </h3>";
 		}
-		/* chorus */
-
 		else if(video.currentTime > 63 && video.currentTime < 69) {
 			lyrics.innerHTML = "<h3> Weep no more my lady</h3>";
 		}
@@ -77,11 +69,9 @@
 		else if(video.currentTime > 84 && video.currentTime < 93) {
 			lyrics.innerHTML = "<h3>For My Old Kentucky Home, far away </h3>";
 		}
-
 		else if(video.currentTime > 93) {
 			lyrics.innerHTML = "<h3> The End </h3>";
 		}
-
 		else {
 			lyrics.innerHTML = "";
 		}
