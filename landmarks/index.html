@@ -53,7 +53,7 @@
 			{
 				me = new google.maps.LatLng(myLat, myLng);
 				
-				// Update map and go there...
+				// Update map and go there.
 				map.panTo(me);
 	
 				// Create a marker
@@ -83,15 +83,11 @@
 					strokeWeight: 2
 				});
 
+				closestLandmark.setMap(map);
+
 				// Open info window on click of marker
 				google.maps.event.addListener(marker, 'click', function() {
 					infowindow.setContent(this.title);
-					infowindow.open(map, this);
-				});
-
-				google.maps.event.addListener(marker, 'click', function() {
-					infowindow.setContent(this.title);
-					closestLandmark.setMap(map);
 					infowindow.open(map, this);
 				});
 
@@ -108,7 +104,7 @@
 					if(request.readyState == 4 && request.status == 200){
 						var data = JSON.parse(request.responseText);
 						var user, userInfo, userMarker, userLat, userLng;
-						console.log(data);
+
 						////////// PEOPLE //////////
 
 						for(i = 0; i < data.people.length; i++){
