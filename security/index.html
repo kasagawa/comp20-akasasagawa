@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title> Assignment 4 </title>
+
+</head>
+
+<body>
+	<h1> Security Assessment </h1>
+	<h2> Prepared by Anna Kasagawa. April 27th, 2018 </h2>
+	<h1> Introduction </h1>
+		<p> This is a security assessment of Marcus Mok's website: <url> http://thawing-temple-41096.herokuapp.com </url>. This web application logs the users who go on the site; it displays their username, location, and time of checkin. There is also an interface where you can see all the checkins for a given user. </p>
+
+		<p> This assesses the website for any security breaches. It lists fours issues in security and the recommended steps to avoid these security risks. This assessment  looks at the website not only at its current state, but how the current security risks are amplified if the data on the site evolves. 
+		</p>
+	<h1> Methodology </h1>
+		<p> First, the code was tested using the "black box" method. Attacks were performed using <code> curl </code> without looking at the source code. Then, the source code was inspected for vulnerabilities. The code was assessed for issues such as logical errors and vulnerabilities to invalid input. 
+		</p>
+	<h1> Abstract of Findings </h1>
+		<p> The site does check the user input to make sure that it is valid latitude and longitude. However, the site is of great risk of attackers modifying the /sendLocation POST request.  
+		</p>
+	<h1> Issues Found </h1>
+		<p> <strong> 1. Cross-Site Scripting </strong> </p>
+			<ul>
+				<li> Affects the POST /sendLocation API </li>
+				<li> <p> Severity: High </p>
+					 <p> This makes the site vulnerable to attack. Anybody can insert JavaScript code into the website and manipulate its contents.
+					 </p>
+				</li>
+				<li> An alert pop up window comes up on the site upon running this code <code> curl --data "login=notspring<script>alert('Too cold for checkins')</script>&lng=32&lat=33" https://thawing-temple-41096.herokuapp.com/sendLocation </code>. Any injected code that the program was not intended to run will affect all users of the site. Users presented with the fraudulent information 
+					<p></p>
+					<img src="p1.png" alt="Issue 1" style="width:464px;height:179px;">
+				</li>
+				<li> Resolution: This problem can easily be prevented by prohibiting data from users to be interpreted as code. In order to do so, brackets &lt; and &gt; and can be replaced with "&lt;" and "&gt;".  		
+				</li>
+			</ul>
+		<p><strong> 2. HTML Injection </strong></p>
+			<ul>
+				<li> Affects the POST /sendLocation API. Allows attackers to control the browser remotely. </li>
+				<li> <p> Severity: High </p>
+					 <p> Similar to issue one, this makes the site vulnerable to the insertion of code by attackers. Attackers will be able to manipulate the content of the site and post fraudulent data.</p>
+				</li>
+
+				<li> Upon running <code> curl --data "login=notspring&lt;h1&gt;hahahahahahhaahhahahahahahah&lt;/h1&gt;&lng=32&lat=33" https://thawing-temple-41096.herokuapp.com/sendLocation </code> it resulted in inserting a header on the page. The checkin is out of format and disrupts the page. <p> </p>
+
+				<p> <img src="p2.png" alt="Issue 2" style="width:435px;height:238px;"> </p> <p> </p>
+	
+				<p> The situation can be escalated by running <code> curl --data "login=pups&lt;img src="http://static.tumblr.com/q8dfwso/cTOm7x5ih/puppies.gif" alt="puppies"&gt;&lng=32&lat=33" https://thawing-temple-41096.herokuapp.com/sendLocation </code>. Now an animated image has been inserted into the page as well as the text. </p> <p> </p>
+
+					<img src="p2.2.png" alt="Issue 2.2" style="width:435px;height:238px;">
+				</li>
+				<li> Resolution: This problem has a quick fix. By replacing user input, we can prevent html code from being executed. 	
+				</li>
+			</ul>
+		<p><strong> 3. Secure Login  </strong></p>
+			<ul>
+				<li> Affects all GET and POST APIs  </li>
+				<li> <p> Severity: Medium </p>
+					 <p> Currently, there are no severe issues without having a secure login. However, if the website held other use information -- such as their bank account number, SSN, or home address -- it would be very dangerous. That information is currently accessible to any user. 
+					 </p>
+				</li>
+				<li> Resolution: Require password with the login information. Then, all the information for a user is only visible to that user. So no personal information will be leaked. 
+				</li>
+			</ul>
+
+	<h1> Conclusion </h1>
+		<p> The data stored for this website is currently not of high risk. However, if the site were to hold personally identifiable information, the issues listed above would be of high severity. The recommendations are quick simple solutions to prohibit attackers from manipulating the site content. It would be necessary to implement controls to MongoDB to maintain the proper user privileges, particularly if the information is of high-risk. And most importantly, 
+		</p>
+		<p> Please, never ever ever trust user input. </p>
+</body>
+
+</html>
