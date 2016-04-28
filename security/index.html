@@ -29,7 +29,7 @@
 					 <p> This makes the site vulnerable to attack. Anybody can insert JavaScript code into the website and manipulate its contents.
 					 </p>
 				</li>
-				<li> An alert pop up window comes up on the site upon running this code <code> curl --data "login=notspring<script>alert('Too cold for checkins')</script>&lng=32&lat=33" https://thawing-temple-41096.herokuapp.com/sendLocation </code>. Any injected code that the program was not intended to run will affect all users of the site. Users presented with the fraudulent information 
+				<li> An alert pop up window comes up on the site upon running this code <code> curl --data "login=notspring&lt;script&gt;alert('Too cold for checkins')&lt;/script&gt;&lng=32&lat=33" https://thawing-temple-41096.herokuapp.com/sendLocation </code>. Any injected code that the program was not intended to run will affect all users of the site. Users presented with the fraudulent information 
 					<p></p>
 					<img src="p1.png" alt="Issue 1" style="width:464px;height:179px;">
 				</li>
